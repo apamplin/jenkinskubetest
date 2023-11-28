@@ -1,13 +1,6 @@
 pipeline {
 
-  agent {
-
-    kubernetes {
-
-      label 'my-kubernetes-agent'
-
-        }
-    }
+  agent any
 
   stages {
 
@@ -22,7 +15,12 @@ pipeline {
     }
 
     stage('Build and push Docker image') {
-
+        agent {
+            docker {
+                label 'docker'
+                image 'node:7-alpine'
+            }
+        }
       steps {
 
         sh 'docker build -t my-image:latest .'
@@ -40,6 +38,9 @@ pipeline {
     stage('Deploy to Kubernetes') {
 
       steps {
+        agent {
+            label 'kubernetes'
+        }
 
         kubernetesDeploy(
 
