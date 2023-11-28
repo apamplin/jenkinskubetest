@@ -6,8 +6,11 @@ pipeline {
 
       label 'my-kubernetes-agent'
 
-        }
     }
+
+  }
+
+  
 
   stages {
 
@@ -20,6 +23,8 @@ pipeline {
       }
 
     }
+
+    
 
     stage('Build and push Docker image') {
 
