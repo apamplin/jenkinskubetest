@@ -21,21 +21,6 @@ pipeline {
 
     }
 
-    stage('Initialize Docker') {
-
-      steps {
-        scripts {
-
-            def dockerHome = tool 'myDocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
-
-        }
-
-      }
-
-    }
-    
-
     stage('Build and push Docker image') {
 
       steps {
