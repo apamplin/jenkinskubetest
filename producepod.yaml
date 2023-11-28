@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer-test
+  labels:
+    app: producer-test
+spec:
+  selector:
+    matchLabels:
+      app: producer-test
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: producer-test
+    spec:
+      containers:
+      - name: producer-test
+        image: localhost:32000/my-image:registry
+        imagePullPolicy: IfNotPresent
