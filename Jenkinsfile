@@ -15,19 +15,9 @@ pipeline {
 
       steps {
 
-        git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/apamplin/jenkinskubetest.git'
+        git 'https://github.com/apamplin/jenkinskubetest.git'
 
       }
-
-    }
-
-    
-    stage('Initialize Docker Tool'){
-
-        steps {
-            sh 'def dockerHome = tool "myDocker"'
-            sh 'env.PATH = "${dockerHome}/bin:${env.PATH}"'
-        }
 
     }
 
