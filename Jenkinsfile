@@ -7,6 +7,11 @@ pipeline {
       label 'my-kubernetes-agent'
 
     }
+    docker {
+        image 'node:20.10.0-alpine3.18'
+        args '-p 3000:3000 -p 5000:5000' 
+        }
+    }
 
   }
 
