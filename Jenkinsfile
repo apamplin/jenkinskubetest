@@ -6,11 +6,8 @@ pipeline {
 
       label 'my-kubernetes-agent'
 
+        }
     }
-
-  }
-
-  
 
   stages {
 
@@ -18,13 +15,11 @@ pipeline {
 
       steps {
 
-        git 'https://github.com/apamplin/jenkinskubetest.git'
+        git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/apamplin/jenkinskubetest.git'
 
       }
 
     }
-
-    
 
     stage('Build and push Docker image') {
 
