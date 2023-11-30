@@ -21,4 +21,4 @@ spec:
       containers:
       - name: producer-test
         image: apamplin/produce:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
