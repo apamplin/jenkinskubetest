@@ -18,5 +18,5 @@ spec:
     spec:
       containers:
       - name: producer-test
-        image: localhost:32000/my-image:registry
+        image: apamplin/produce:latest
         imagePullPolicy: IfNotPresent
