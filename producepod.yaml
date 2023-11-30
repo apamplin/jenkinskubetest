@@ -5,6 +5,8 @@ metadata:
   labels:
     app: producer-test
 spec:
+  securityContext:
+    runAsUser: 1000
   selector:
     matchLabels:
       app: producer-test
