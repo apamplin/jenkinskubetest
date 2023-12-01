@@ -15,5 +15,5 @@ while True:
         "num": num
     }
     client.publish('test', json.dumps(payload))
-    print(f"Published COOL data: {payload}")
+    print(f"Published THE COOLEST data: {payload}")
     time.sleep(5)
