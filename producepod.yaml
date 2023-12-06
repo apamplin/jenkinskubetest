@@ -20,5 +20,5 @@ spec:
         runAsUser: 1000
       containers:
       - name: producer-test
-        image: produce
+        image: apamplin/produce:latest
         imagePullPolicy: Never
