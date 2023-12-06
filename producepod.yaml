@@ -20,5 +20,5 @@ spec:
         runAsUser: 1000
       containers:
       - name: producer-test
-        image: produce:latest
-        imagePullPolicy: Always
+        image: produce
+        imagePullPolicy: Never
